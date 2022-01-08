@@ -1,0 +1,12 @@
+1. While get the code from gitlab pot MFA authentication
+
+update the .git/config file- 
+https://stackoverflow.com/questions/51658549/how-to-use-git-commands-after-enable-gitlabs-second-factor-authentication
+
+$ git pull origin2 master
+remote: HTTP Basic: Access denied
+remote: You must use a personal access token with 'read_repository' or 'write_repository' scope for Git over HTTP.
+remote: You can generate one at https://gitlab.com/profile/personal_access_tokens
+fatal: Authentication failed for 'https://gitlab.com/arvindsah/anotherproject.git/'
+
+2. 

@@ -1,0 +1,47 @@
+1. Directly pass then xml file via maven command line 
+mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml -Denv=qa 
+
+1. Invocation count
+2. Priority 
+3. ExpectedExceptions
+4. Depends on Method
+Description tag of testNG - https://artoftesting.com/testng-annotations
+	@Test(description = "Test summary")
+	@Test(dataProvider = "name of dataProvider")
+	@Test(priority = 2)
+	@Test(enabled = false)
+	@Test(groups = { "sanity", "regression" })
+	@Test(dependsOnMethods = { "dependentTestMethodName" })
+	@Test(dependsOnGroups = { "dependentGroup" })
+	@Test(alwaysRun=True)
+	@Test (timeOut = 500)
+	
+Diffrent tags available in the Allure Testng Report - allure reports documentation
+	@Description, EPIC, Feature, Story, Step, Severity(SeverityLevel.)
+	
+	@Step("validing the element {0} and their content {1}")
+	create a function as part of the base class having the general method to print the log inside the allure report
+	and call that menthod inside of any test method by passing the msg as argument.
+	
+	
+	
+	
+	after_script: - cd qa-tests - mvn allure:report artifacts: when: always name: "Report" 
+	paths: - $CI_PROJECT_DIR/qa-tests/target/site/allure-maven-plugin/ expire_in: 15 days
+	
+	
+	//switching tabs for diffrent application and getting back to the main window
+	
+	1.  ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+    driver.switchTo().window(tabs2.get(1));
+    driver.close();
+    driver.switchTo().window(tabs2.get(0));
+	
+	2. ((JavascriptExecutor) driver).executeScript("window.open()");
+	ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+	driver.switchTo().window(tabs.get(1))
+	
+	
+	
+	
+	
